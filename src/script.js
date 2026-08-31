@@ -15,9 +15,9 @@ class Produto {
 
 const catalogo = [
   new Produto("Caneca Personalizada",  30.00 , "Caneca", "Cerâmica branca (325 ml) com a sua foto favorita e o seu nome do outro lado. Simples, prática e ideal para o dia a dia."),
-  new Produto("caneca Personaliza",  35.00, "Caneca", "erâmica branca com uma frase curta e direta para dar aquele ânimo no café da manhã."),
-  new Produto("Almofada ", 40.00 , "Almofada",         "Almofada personalizada com sua foto, (40x40)"),
-  new Produto("Almofada", 38.00, "Almofada",       "Almofada da série O mentalista"),
+  new Produto("caneca Personalizada",  35.00, "Caneca", "erâmica branca com uma frase curta e direta para dar aquele ânimo no café da manhã."),
+  new Produto("Almofada ", 40.00 , "Almofada",  "Almofada personalizada com sua foto, (40x40)"),
+  new Produto("Almofada", 38.00, "Almofada",  "Almofada da série O mentalista"),
 
 ];
 
