@@ -1,0 +1,8 @@
+#catalogo .btn-info {
+  background: #39a7db;
+  border: none;
+}
+
+#catalogo .btn-info:hover {
+  background: #2d8ec6;
+}
