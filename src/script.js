@@ -21,15 +21,14 @@ const catalogo = [
 
 ];
 
-const containerCatalogo = document.querySelector('#cartalogo');
+const containerCatalogo = document.querySelector('#catalogo');
 
 function criarCardProduto(produto) {
   const col = document.createElement('div');
   col.className = 'col-12 col-md-6 col-lg-4';
 
   const card = document.createElement('article');
-  card.className = 'card-prato card h-100';
-
+  card.className = 'card h-100';
 
   card.innerHTML = `
     <div class="card-body">
@@ -40,10 +39,10 @@ function criarCardProduto(produto) {
     <div class="card-footer bg-transparent border-top-0 pb-3">
       <button class="btn btn-danger w-100"
               data-bs-toggle="modal"
-              data-bs-target="#modalPrato"
+              data-bs-target="#modalProduto"
               data-nome="${produto.nome}"
               data-categoria="${produto.categoria}"
-              data-preco="${prato.formatarPreco()}"
+              data-preco="${produto.formatarPreco()}"
               data-descricao="${produto.descricao}">
         Ver detalhes
       </button>
@@ -55,7 +54,7 @@ function criarCardProduto(produto) {
 }
 
 function renderizarCatalogo() {
-  containerCardapio.innerHTML = '';
+  containerCatalogo.innerHTML = '';
   catalogo.forEach(produto => {
     containerCatalogo.appendChild(criarCardProduto(produto));
   });
@@ -64,11 +63,11 @@ function renderizarCatalogo() {
 renderizarCatalogo();
 
 document.addEventListener('show.bs.modal', (event) => {
-  const btn  = event.relatedTarget;
+  const btn = event.relatedTarget;
   if (!btn) return;
 
-  document.getElementById('modalNome').textContent      = btn.getAttribute('data-nome');
-  document.getElementById('modalCategoria').textContent = btn.getAttribute('data-catalogo');
-  document.getElementById('modalPreco').textContent     = btn.getAttribute('data-preco');
+  document.getElementById('modalNome').textContent = btn.getAttribute('data-nome');
+  document.getElementById('modalCategoria').textContent = btn.getAttribute('data-categoria');
+  document.getElementById('modalPreco').textContent = btn.getAttribute('data-preco');
   document.getElementById('modalDescricao').textContent = btn.getAttribute('data-descricao');
 });
