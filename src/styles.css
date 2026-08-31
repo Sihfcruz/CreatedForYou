@@ -1,8 +1,13 @@
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
 }
+.hero {
+  background: #f8f9fa;
+}
 
-
+.foto img {
+  object-fit: cover;
+}
 #catalogo .btn-info {
   background: #39a7db;
   border: none;
@@ -11,3 +16,25 @@ body {
 #catalogo .btn-info:hover {
   background: #2d8ec6;
 }
+
+.product-image img {
+  object-fit: cover;
+}
+
+.item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.item.selected {
+  border-color: #0d6efd;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    padding-top: 1rem;
+  }
+}
+
+
