@@ -50,21 +50,21 @@ const catalogo = [
     25.00,
     "EcoBag",
     "EcoBag de tecido personalizada com arte, frase ou imagem. Uma opção útil para o dia a dia.",
-    ""
+    "images/ecobagMarlon.jpg"
   ),
     new Produto(
     "Garrafa com Foto",
     75.00,
     "Garrafa",
     "Garrafa personalizada com foto, ótima para presentear alguém com uma lembrança diferente.",
-    ""
+    "images/garrafa.png"
   ),
     new Produto(
     "Almofada Clássica",
     40.00,
     "Almofada",
     "Almofada branca pronta para receber uma personalização especial com foto ou mensagem.",
-    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80"
+    "images/almofada.jpg"
   )
   
 ];
