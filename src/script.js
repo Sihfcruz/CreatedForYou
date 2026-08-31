@@ -34,7 +34,7 @@ const catalogo = [
     40.00,
     "Almofada",
     "Almofada (40x40 cm) com a foto que deseja ",
-    "images/ecobagMarlon.jpg"
+    "images/almofada_personalizada.png"
   ),
     new Produto(
     "Garrafa Personalizada",
