@@ -1,11 +1,12 @@
 
 
 class Produto {
-  constructor(nome, preco, categoria, descricao) {
-    this.nome      = nome;
-    this.preco     = preco;
+  constructor(nome, preco, categoria, descricao, imagem) {
+    this.nome = nome;
+    this.preco = preco;
     this.categoria = categoria;
     this.descricao = descricao;
+    this.imagem = imagem;
   }
 
   formatarPreco() {
@@ -14,24 +15,40 @@ class Produto {
 }
 
 const catalogo = [
-  new Produto("Caneca Personalizada",  30.00 , "Caneca", "Cerâmica branca (325 ml) com a sua foto favorita e o seu nome do outro lado. Simples, prática e ideal para o dia a dia."),
-  new Produto("caneca Personaliza",  35.00, "Caneca", "erâmica branca com uma frase curta e direta para dar aquele ânimo no café da manhã."),
-  new Produto("Almofada ", 40.00 , "Almofada",         "Almofada personalizada com sua foto, (40x40)"),
-  new Produto("Almofada", 38.00, "Almofada",       "Almofada da série O mentalista"),
-
+  new Produto(
+    "Caneca Personalizada",
+    30.00,
+    "Caneca",
+    "Cerâmica branca (325 ml) com a sua foto favorita e o seu nome do outro lado. Simples, prática e ideal para o dia a dia.",
+    "images/caneca.png"
+  ),
+  new Produto(
+    "Garrafa Personalizada",
+    35.00,
+    "Garrafa",
+    "Garrafa com design moderno e mensagem personalizada para presentear com estilo.",
+    "images/garrafa.png"
+  ),
+  new Produto(
+    "EcoBag Personalizada",
+    40.00,
+    "EcoBag",
+    "EcoBag prática, resistente e com visual personalizado para qualquer ocasião.",
+    "images/ecobag.png"
+  )
 ];
 
-const containerCatalogo = document.querySelector('#cartalogo');
+const containerCatalogo = document.querySelector('#catalogo');
 
 function criarCardProduto(produto) {
   const col = document.createElement('div');
   col.className = 'col-12 col-md-6 col-lg-4';
 
   const card = document.createElement('article');
-  card.className = 'card-prato card h-100';
-
+  card.className = 'card h-100';
 
   card.innerHTML = `
+    <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}" style="height: 220px; object-fit: cover;">
     <div class="card-body">
       <h5 class="card-title fw-bold">${produto.nome}</h5>
       <p class="card-text text-muted">${produto.categoria}</p>
@@ -40,10 +57,10 @@ function criarCardProduto(produto) {
     <div class="card-footer bg-transparent border-top-0 pb-3">
       <button class="btn btn-danger w-100"
               data-bs-toggle="modal"
-              data-bs-target="#modalPrato"
+              data-bs-target="#modalProduto"
               data-nome="${produto.nome}"
               data-categoria="${produto.categoria}"
-              data-preco="${prato.formatarPreco()}"
+              data-preco="${produto.formatarPreco()}"
               data-descricao="${produto.descricao}">
         Ver detalhes
       </button>
@@ -55,7 +72,7 @@ function criarCardProduto(produto) {
 }
 
 function renderizarCatalogo() {
-  containerCardapio.innerHTML = '';
+  containerCatalogo.innerHTML = '';
   catalogo.forEach(produto => {
     containerCatalogo.appendChild(criarCardProduto(produto));
   });
@@ -64,11 +81,11 @@ function renderizarCatalogo() {
 renderizarCatalogo();
 
 document.addEventListener('show.bs.modal', (event) => {
-  const btn  = event.relatedTarget;
+  const btn = event.relatedTarget;
   if (!btn) return;
 
-  document.getElementById('modalNome').textContent      = btn.getAttribute('data-nome');
-  document.getElementById('modalCategoria').textContent = btn.getAttribute('data-catalogo');
-  document.getElementById('modalPreco').textContent     = btn.getAttribute('data-preco');
+  document.getElementById('modalNome').textContent = btn.getAttribute('data-nome');
+  document.getElementById('modalCategoria').textContent = btn.getAttribute('data-categoria');
+  document.getElementById('modalPreco').textContent = btn.getAttribute('data-preco');
   document.getElementById('modalDescricao').textContent = btn.getAttribute('data-descricao');
 });
