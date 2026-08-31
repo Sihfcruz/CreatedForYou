@@ -35,7 +35,15 @@ const catalogo = [
     "Almofada",
     "Almofada (40x40 cm) com a foto que deseja ",
     "images/ecobagMarlon.jpg"
-  )
+  ),
+    new Produto(
+    "Garrafa Personalizada",
+    70.00,
+    "Garrafa",
+    "Garrafa personalizada com a foto do Marlon  ",
+    "images/garrafaMarlon.jpg"
+  ),
+  
 ];
 
 const containerCatalogo = document.querySelector('#catalogo');
