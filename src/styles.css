@@ -1,3 +1,8 @@
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+
 #catalogo .btn-info {
   background: #39a7db;
   border: none;
