@@ -55,7 +55,7 @@ function criarCardProduto(produto) {
       <p class="card-text fs-5 fw-bold text-success">${produto.formatarPreco()}</p>
     </div>
     <div class="card-footer bg-transparent border-top-0 pb-3">
-      <button class="btn btn-danger w-100"
+      <button class="btn btn-info w-100"
               data-bs-toggle="modal"
               data-bs-target="#modalProduto"
               data-nome="${produto.nome}"
