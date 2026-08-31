@@ -12,7 +12,7 @@
 
   <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
     <div class="container">
-      <a class="navbar-brand fw-bold fs-4" href="#">🖌️CreatedForYou</a>
+      <a class="navbar-brand fw-bold fs-1" href="#">🖌️CreatedForYou</a>
       <button class="navbar-toggler" type="button"
               data-bs-toggle="collapse" data-bs-target="#menu"
               aria-controls="menu" aria-expanded="false" aria-label="Menu">
@@ -37,7 +37,7 @@
 
     <hr class="my-5">
      
-    <section id="contato" class="row justify-content-center">
+    <section id="criar" class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
         <h2 class="text-center mb-4 fw-bold">Monte o Seu</h2>
         <form>
@@ -49,11 +49,28 @@
             <label class="form-label">E-mail</label>
             <input type="email" class="form-control" placeholder="voce@email.com">
           </div>
+
+          <div class="mb-4">
+        <label class="form-label fw-bold">
+          Imagem da personalização
+        </label>
+
+        <div class="border rounded p-4 text-center">
+          <p class="mb-3">
+            Adicione a imagem que deseja colocar no objeto
+          </p>
+          <button type="button" class="btn btn-info">
+            Escolher imagem
+          </button>
+        </div>
+      </div>
+
+
           <div class="mb-3">
             <label class="form-label">Mensagem</label>
-            <textarea class="form-control" rows="4" placeholder="Sua mensagem..."></textarea>
+            <textarea class="form-control" rows="4" placeholder="">Detalhe seu pedido personalizado</textarea>
           </div>
-          <button type="button" class="btn btn-danger w-100">Detalhe seu pedido personalizado</button>
+          <button type="button" class="btn btn-info w-100">Pedir</button>
         </form>
       </div>
     </section>
@@ -61,10 +78,10 @@
   </main>
 
   
-    <div class="modal fade" id="modalObjeto" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="modalProduto" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header bg-danger text-white">
+        <div class="modal-header bg-info text-white">
           <h5 class="modal-title" id="modalNome"></h5>
           <button type="button" class="btn-close btn-close-white"
                   data-bs-dismiss="modal" aria-label="Fechar"></button>
