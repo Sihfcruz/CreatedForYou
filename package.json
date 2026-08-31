@@ -18,4 +18,7 @@
     "url": "https://github.com/Sihfcruz/CreatedForYou/issues"
   },
   "homepage": "https://github.com/Sihfcruz/CreatedForYou#readme",
- 
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
+}
