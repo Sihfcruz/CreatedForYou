@@ -20,21 +20,21 @@ const catalogo = [
     30.00,
     "Caneca",
     "Cerâmica branca (325 ml) com a sua foto favorita e o seu nome do outro lado. Simples, prática e ideal para o dia a dia.",
-    "images/caneca.png"
+    "images/caneca.jpg"
   ),
   new Produto(
-    "Garrafa Personalizada",
+    "Caneca Personalizada",
     35.00,
-    "Garrafa",
-    "Garrafa com design moderno e mensagem personalizada para presentear com estilo.",
-    "images/garrafa.png"
+    "Caneca",
+    "Caneca  branca (325 ml) com a sua foto favorita e o seu nome do outro lado. Simples, prática e ideal para o dia a dia.",
+    "images/caneca_Iot.jpg"
   ),
   new Produto(
-    "EcoBag Personalizada",
+    "Almofada Personalizada",
     40.00,
-    "EcoBag",
-    "EcoBag prática, resistente e com visual personalizado para qualquer ocasião.",
-    "images/ecobag.png"
+    "Almofada",
+    "Almofada (40x40 cm) com a foto que deseja ",
+    "images/alfomofada_personalizada.png"
   )
 ];
 
