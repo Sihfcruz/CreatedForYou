@@ -1,6 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
 class Produto {
   constructor(nome, preco, categoria, descricao, imagem) {
     this.nome = nome;
@@ -18,55 +15,53 @@ class Produto {
 const catalogo = [
   new Produto(
     "Caneca Personalizada",
-    30.00,
+    30.0,
     "Caneca",
     "Cerâmica branca (325 ml) com a sua foto favorita e o seu nome do outro lado. Simples, prática e ideal para o dia a dia.",
     "images/caneca.jpg"
   ),
   new Produto(
     "Caneca Personalizada",
-    35.00,
+    35.0,
     "Caneca",
-    "Caneca  branca (325 ml) com a sua foto favorita e o seu nome do outro lado. Simples, prática e ideal para o dia a dia.",
+    "Caneca branca (325 ml) com a sua foto favorita e o seu nome do outro lado. Simples, prática e ideal para o dia a dia.",
     "images/caneca_Iot.jpg"
   ),
   new Produto(
     "Almofada Personalizada",
-    40.00,
+    40.0,
     "Almofada",
-    "Almofada (40x40 cm) com a foto que deseja ",
+    "Almofada (40x40 cm) com a foto que deseja.",
     "images/almofada_personalizada.png"
   ),
-    new Produto(
+  new Produto(
     "Garrafa Personalizada",
-    70.00,
+    70.0,
     "Garrafa",
-    "Garrafa personalizada com a foto do Marlon  ",
+    "Garrafa personalizada com a foto do Marlon.",
     "images/garrafaMarlon.jpg"
   ),
-  
   new Produto(
     "EcoBag Personalizada",
-    25.00,
+    25.0,
     "EcoBag",
     "EcoBag de tecido personalizada com arte, frase ou imagem. Uma opção útil para o dia a dia.",
     "images/ecobagMarlon.jpg"
   ),
-    new Produto(
+  new Produto(
     "Garrafa com Foto",
-    75.00,
+    75.0,
     "Garrafa",
     "Garrafa personalizada com foto, ótima para presentear alguém com uma lembrança diferente.",
     "images/garrafa.png"
   ),
-    new Produto(
+  new Produto(
     "Almofada Clássica",
-    40.00,
+    40.0,
     "Almofada",
     "Almofada branca pronta para receber uma personalização especial com foto ou mensagem.",
     "images/almofada.jpg"
   )
-  
 ];
 
 const containerCatalogo = document.querySelector('#catalogo');
@@ -76,12 +71,11 @@ function criarCardProduto(produto) {
   col.className = 'col-12 col-md-6 col-lg-4';
 
   const card = document.createElement('article');
-  card.className = 'card h-100 h-100 border-0 shadow-sm';
+  card.className = 'card h-100 border-0 shadow-sm';
 
-card.innerHTML = `
+  card.innerHTML = `
     <div class="product-image">
-      <img src="${produto.imagem}" class="card-img-top"
-           alt="${produto.nome}">
+      <img src="${produto.imagem}" class="card-img-top" alt="${produto.nome}">
       <span class="badge product-badge">${produto.categoria}</span>
     </div>
 
@@ -108,19 +102,18 @@ card.innerHTML = `
     </div>
   `;
 
-
   col.appendChild(card);
   return col;
 }
 
 function renderizarCatalogo() {
+  if (!containerCatalogo) return;
+
   containerCatalogo.innerHTML = '';
-  catalogo.forEach(produto => {
+  catalogo.forEach((produto) => {
     containerCatalogo.appendChild(criarCardProduto(produto));
   });
 }
-
-renderizarCatalogo();
 
 document.addEventListener('show.bs.modal', (event) => {
   const btn = event.relatedTarget;
@@ -130,19 +123,16 @@ document.addEventListener('show.bs.modal', (event) => {
   document.getElementById('modalCategoria').textContent = btn.getAttribute('data-categoria');
   document.getElementById('modalPreco').textContent = btn.getAttribute('data-preco');
   document.getElementById('modalDescricao').textContent = btn.getAttribute('data-descricao');
-  document.getElementById("modalDescricao").textContent =btn.getAttribute("data-descricao");
-  });
-  document.querySelectorAll(".object-option").forEach((botao) => {
-  botao.addEventListener("click", () => {
-    document.querySelectorAll(".object-option").forEach((item) => {
-      item.classList.remove("selected");
+});
+
+document.querySelectorAll('.object-option').forEach((botao) => {
+  botao.addEventListener('click', () => {
+    document.querySelectorAll('.object-option').forEach((item) => {
+      item.classList.remove('selected');
     });
 
-    botao.classList.add("selected");
+    botao.classList.add('selected');
   });
 });
 
-
-
-  
-});
+renderizarCatalogo();
